@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- Permet au site de s'adapter automatiquement aux écrans mobiles -->
+  <!-- Responsive mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Le coccyx : héritage discret de notre évolution</title>
@@ -12,7 +12,6 @@
 
     /* =========================
        RESET GLOBAL
-       Supprime les marges par défaut
        ========================= */
     * {
       margin: 0;
@@ -20,62 +19,57 @@
       box-sizing: border-box;
     }
 
-    /* =========================
-       STYLE GENERAL DU SITE
-       ========================= */
     body {
       font-family: Arial, Helvetica, sans-serif;
       background: #f4f6f9;
       color: #1f2937;
       line-height: 1.7;
-      overflow-x: hidden; /* Empêche le défilement horizontal */
+      overflow-x: hidden;
     }
 
     /* =========================
-       EN-TÊTE PRINCIPAL
+       HEADER
        ========================= */
     header {
       background: linear-gradient(135deg, #111827, #374151);
       color: white;
       text-align: center;
-      padding: 60px 20px;
+      padding: 55px 20px;
     }
 
     header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 20px;
+      font-size: 2.4rem;
+      margin-bottom: 18px;
     }
 
     header p {
-      max-width: 850px;
+      max-width: 700px;
       margin: auto;
-      font-size: 1.1rem;
+      font-size: 1rem;
       opacity: 0.9;
     }
 
     /* =========================
        CONTAINER PRINCIPAL
-       Largeur adaptée aux téléphones
        ========================= */
     .container {
       width: 100%;
-      max-width: 480px; /* Limite spécialement pensée pour mobile */
+      max-width: 480px;
       margin: auto;
-      padding: 20px 14px;
+      padding: 18px 12px;
     }
 
     /* =========================
-       BLOCS DE CONTENU
+       BLOCS
        ========================= */
     .section {
       background: white;
       border-radius: 18px;
       overflow: hidden;
-      margin-bottom: 28px;
+      margin-bottom: 26px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
 
-    /* Zone texte */
     .text {
       padding: 22px;
     }
@@ -87,58 +81,64 @@
     }
 
     .text p {
-      font-size: 0.97rem;
+      font-size: 0.96rem;
       margin-bottom: 14px;
       color: #374151;
       text-align: justify;
-      word-wrap: break-word;
+      word-break: break-word;
     }
 
     /* =========================
-       SLIDER D'IMAGES
-       Chaque section possède 3 images
+       SLIDER
        ========================= */
     .slider {
       width: 100%;
       overflow: hidden;
       position: relative;
+      background: #e5e7eb;
     }
 
     /*
-      La largeur est multipliée par 3
-      car il y a 3 images.
+      Largeur adaptée à 3 images.
     */
     .slides {
       display: flex;
       width: 300%;
-
-      /*
-        Animation automatique des slides.
-        Le slider défile sans JavaScript.
-      */
       animation: slideAnimation 15s infinite;
     }
 
-    /* Chaque slide prend toute la largeur */
     .slide {
       width: 100%;
       flex-shrink: 0;
-    }
 
-    /* Images responsive */
-    .slide img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
+      /*
+        Centre les images proprement.
+      */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
     }
 
     /*
-      Animation du carrousel.
-      translateX déplace horizontalement
-      les images automatiquement.
+      Images totalement adaptatives.
+      object-fit: contain garde
+      l'image entière visible.
     */
+    .slide img {
+      width: 100%;
+      height: 220px;
+      object-fit: contain;
+      background: #f3f4f6;
+      display: block;
+      padding: 6px;
+    }
+
+    /* =========================
+       ANIMATION SLIDER
+       ========================= */
     @keyframes slideAnimation {
+
       0%, 28% {
         transform: translateX(0);
       }
@@ -157,7 +157,7 @@
     }
 
     /* =========================
-       SOURCES / BIBLIOGRAPHIE
+       SOURCES
        ========================= */
     .sources {
       background: white;
@@ -203,28 +203,25 @@
     }
 
     /* =========================
-       VERSION ORDINATEUR
-       Le site s'élargit légèrement
+       VERSION TABLETTE/PC
        ========================= */
     @media (min-width: 768px) {
 
       .container {
-        max-width: 900px;
+        max-width: 950px;
       }
 
       .section {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        align-items: stretch;
       }
 
       .slide img {
-        height: 100%;
-        min-height: 320px;
+        height: 320px;
       }
 
       .text {
-        padding: 35px;
+        padding: 34px;
       }
 
       .text h2 {
@@ -240,25 +237,24 @@
 </head>
 <body>
 
-  <!-- =========================
-       HEADER PRINCIPAL
-       ========================= -->
+  <!-- HEADER -->
   <header>
+
     <h1>Le coccyx : héritage discret de notre évolution</h1>
 
     <p>
       Une petite structure anatomique souvent oubliée… mais qui raconte beaucoup sur les compromis du corps humain et l’histoire de notre évolution.
     </p>
+
   </header>
 
   <div class="container">
 
-    <!-- =========================
-         INTRODUCTION
-         ========================= -->
+    <!-- INTRODUCTION -->
     <section class="section">
 
       <div class="text">
+
         <h2>Une petite structure… avec une longue histoire</h2>
 
         <p>
@@ -272,9 +268,11 @@
         <p>
           Le coccyx reste alors comme une trace anatomique héritée de structures plus anciennes conservées au fil de l’évolution.
         </p>
+
       </div>
 
       <div class="slider">
+
         <div class="slides">
 
           <div class="slide">
@@ -290,16 +288,16 @@
           </div>
 
         </div>
+
       </div>
 
     </section>
 
-    <!-- =========================
-         AVANTAGES
-         ========================= -->
+    <!-- AVANTAGES -->
     <section class="section">
 
       <div class="text">
+
         <h2>Les bienfaits du coccyx</h2>
 
         <p>
@@ -313,10 +311,11 @@
         <p>
           Sans être indispensable au quotidien, il joue encore un rôle de soutien anatomique utile.
         </p>
+
       </div>
 
-      <!-- Slider automatique -->
       <div class="slider">
+
         <div class="slides">
 
           <div class="slide">
@@ -332,16 +331,16 @@
           </div>
 
         </div>
+
       </div>
 
     </section>
 
-    <!-- =========================
-         DESAVANTAGES
-         ========================= -->
+    <!-- DESAVANTAGES -->
     <section class="section">
 
       <div class="text">
+
         <h2>…et les désavantages beaucoup plus visibles</h2>
 
         <p>
@@ -359,10 +358,11 @@
         <p>
           Les longues positions assises modernes accentuent encore davantage ces douleurs.
         </p>
+
       </div>
 
-      <!-- Slider automatique -->
       <div class="slider">
+
         <div class="slides">
 
           <div class="slide">
@@ -378,18 +378,18 @@
           </div>
 
         </div>
+
       </div>
 
     </section>
 
-    <!-- =========================
-         SOURCES
-         ========================= -->
+    <!-- SOURCES -->
     <section class="sources">
 
       <h2>Bibliographie / Sources</h2>
 
       <ul>
+
         <li>
           <a href="https://www.britannica.com/list/7-vestigial-features-of-the-human-body" target="_blank">
             Encyclopaedia Britannica
@@ -413,19 +413,20 @@
             Cleveland Clinic
           </a>
         </li>
+
       </ul>
 
     </section>
 
   </div>
 
-  <!-- =========================
-       FOOTER
-       ========================= -->
+  <!-- FOOTER -->
   <footer>
+
     <p>
       Article de vulgarisation scientifique — Anatomie & évolution humaine
     </p>
+
   </footer>
 
 </body>
