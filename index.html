@@ -85,7 +85,7 @@ header p {
 .slides {
   display: flex;
   width: 300%;
-  animation: slide 3s infinite;
+  animation: slide 15s infinite;
 }
 
 .slide {
@@ -95,8 +95,11 @@ header p {
 
 .slide img {
   width: 100%;
-  height: 400px;
+  height: auto;
+  max-height: 320px;
   object-fit: cover;
+  display: block;
+  border-radius: 12px;
 }
 
 @keyframes slide {
@@ -178,6 +181,19 @@ footer {
 
   .container {
     padding: 25px 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    min-height: auto;
+  }
+
+  .slide img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
   }
 }
 
